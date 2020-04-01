@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=north": {"model": "firstmod:block/powerblock"},
+    "facing=south": {"model": "firstmod:block/powerblock", "y": 180 },
+    "facing=west": {"model": "firstmod:block/powerblock", "y":  270},
+    "facing=east": {"model": "firstmod:block/powerblock", "y":  90},
+    "facing=up": {"model": "firstmod:block/powerblock"},
+    "facing=down": {"model": "firstmod:block/powerblock"}
+  }
+}
