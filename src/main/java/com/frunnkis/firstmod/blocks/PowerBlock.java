@@ -44,6 +44,7 @@ public class PowerBlock extends Block {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.METAL)
                 .hardnessAndResistance(2.0f)
+                .lightValue(14)
         );
         setRegistryName("powerblock");
     }
@@ -52,6 +53,11 @@ public class PowerBlock extends Block {
     @Override
     public boolean hasTileEntity(BlockState state) {
         return true;
+    }
+
+    @Override
+    public int getLightValue(BlockState state) {
+        return state.get(BlockStateProperties.POWERED) ? super.getLightValue(state) : 0;
     }
 
     @Nullable
@@ -85,6 +91,6 @@ public class PowerBlock extends Block {
 
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-        builder.add(BlockStateProperties.FACING);
+        builder.add(BlockStateProperties.FACING, BlockStateProperties.POWERED);
     }
 }
